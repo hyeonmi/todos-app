@@ -1,4 +1,4 @@
-import {Todo} from "../types";
+import {Todo} from "../types"
 
 export enum ActionTypes {
     ADD_TODO = 'ADD_TODO',
@@ -8,14 +8,15 @@ export enum ActionTypes {
 type AddTodo = { type: typeof ActionTypes.ADD_TODO, payload: {todo: Todo} }
 type ToggleTodo = { type: typeof ActionTypes.TOGGLE_TODO, payload: {todoId: number} }
 
-let nextId = 1;
+let nextId = 0
 
 export const addTodo = (text: string) : AddTodo => {
+    nextId += 1
     return {
         payload: {
             todo: {
                 text,
-                id: nextId++,
+                id: nextId,
                 done: false
             }
         },
