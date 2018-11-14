@@ -1,12 +1,11 @@
 import * as Actions from '../'
-import {ActionTypes} from "../";
 
 describe('Action >', () =>{
     test('ADD_TODO 액션을 호출하면 payload에 할일 데이터가 반환 된다.', () => {
         // given
         const text = "blabla"
         const expectAction = {
-            type: ActionTypes.ADD_TODO,
+            type: Actions.ActionTypes.ADD_TODO,
             payload: {
                 todo: {
                     text,
@@ -27,7 +26,7 @@ describe('Action >', () =>{
         // given
         const todoId = 1
         const expectAction = {
-            type: ActionTypes.TOGGLE_TODO,
+            type: Actions.ActionTypes.TOGGLE_TODO,
             payload: {
                 todoId
             }
