@@ -48,7 +48,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "clean:coverage": "rimraf coverage",
+    "coverage": "yarn clean:coverage && yarn test -- --coverage && mv ./coverage/coverage-final.json ./coverage/coverage-unit-final.json"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.15",
@@ -61,14 +63,12 @@
     "@types/redux": "^3.6.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
+    "rimraf": "^2.6.2",
+    "tslint-config-airbnb": "^5.11.0",
     "typescript": "^3.1.6"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./setupEnzyme.js",
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!**/*.d.ts"
-    ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],
@@ -103,9 +103,15 @@
       "node",
       "mjs"
     ],
+    "coverageReporters": ["html", "json"],
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!**/*.d.ts"
+    ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "/Users/skylar/Documents/workspace/todos-app/tsconfig.test.json"
+        "tsConfigFile": "./tsconfig.test.json"
       }
     }
   },
