@@ -13,8 +13,13 @@ interface State {
 }
 
 class TodoList extends React.Component<Props, State> {
+    handleToggleTodo (id: number) {
+        const {toggleTodo} = this.props
+        toggleTodo(id)
+    }
+
     render(){
-        const {todos, toggleTodo} = this.props
+        const {todos} = this.props
 
         if(!todos.length){
             return null
@@ -26,7 +31,7 @@ class TodoList extends React.Component<Props, State> {
                     todos.map((todo: Todo) => {
                         const {done, text, id} = todo
                         return (
-                            <li key={id} onClick={() => toggleTodo(id)}>
+                            <li key={id} onClick={this.handleToggleTodo.bind(this, id)}>
                                 <input type="checkbox" checked={done} readOnly={true}/>
                                 <span style={{textDecoration: done ? 'line-through':''}}>{text}</span>
                             </li>

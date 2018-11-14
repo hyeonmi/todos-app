@@ -25,11 +25,13 @@ class TodoInput extends React.Component<Props, State> {
         }
     }
 
+    handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const {value} = e.target
+        this.setState({input: value})
+    }
+
     handleInsert = () => {
         const {input} = this.state
-        if(!input){
-            return
-        }
 
         if(input.trim() === ""){
             return
@@ -39,15 +41,10 @@ class TodoInput extends React.Component<Props, State> {
         this.setState({input: ""})
     }
 
-    handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const {value} = e.target
-        this.setState({input: value})
-    }
-
     render(){
         return (
             <div>
-                <input value={this.state.input} onKeyPress={this.handleKeyPress} onChange={this.handleChange} />
+                <input type="text" value={this.state.input} onKeyPress={this.handleKeyPress} onChange={this.handleChange} />
                 <input type='button' onClick={this.handleInsert} value='추가' />
             </div>
         )
