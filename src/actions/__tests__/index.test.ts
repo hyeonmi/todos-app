@@ -1,4 +1,4 @@
-import configureStore from 'redux-mock-store'
+import reduxMockStore from 'redux-mock-store'
 import * as Actions from '../'
 import {initialState} from '../../types'
 
@@ -44,7 +44,7 @@ describe('Action Test 1 >', () =>{
 describe('Action Test 2 > ', () => {
     let store :any
     beforeEach(() => {
-        const mockStore = configureStore([])
+        const mockStore = reduxMockStore([])
         store = mockStore(initialState)
     })
 
