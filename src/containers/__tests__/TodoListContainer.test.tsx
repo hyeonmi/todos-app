@@ -1,7 +1,7 @@
 import * as React from 'react'
 import reduxMockStore from 'redux-mock-store'
 import {shallow} from 'enzyme'
-import TodosContainer from '../TodosContainer'
+import TodosContainer from '../TodoListContainer'
 import {initialAppState} from "../../types";
 import {ActionTypes} from "../../actions";
 
