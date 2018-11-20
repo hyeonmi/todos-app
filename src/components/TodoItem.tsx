@@ -8,7 +8,6 @@ interface OwnProps {
 
 type Props = OwnProps
 
-
 const todoItem : React.SFC<Props> = ({todo, toggleTodo}) => {
     const {done, text, id} = todo
     const handleToggleTodo = () => {
