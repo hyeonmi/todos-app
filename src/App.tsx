@@ -1,6 +1,6 @@
 import * as React from 'react'
 import TodoInputContainer from './containers/TodoInputContainer'
-import TodosContainer from './containers/TodosContainer'
+import TodoListContainer from './containers/TodoListContainer'
 class App extends React.Component {
   public render() {
     return (
@@ -8,7 +8,7 @@ class App extends React.Component {
             <h1>Todo List</h1>
             <div>
               <TodoInputContainer/>
-              <TodosContainer/>
+              <TodoListContainer/>
             </div>
         </div>
     )

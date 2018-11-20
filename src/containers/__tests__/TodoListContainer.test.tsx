@@ -1,11 +1,11 @@
 import * as React from 'react'
 import reduxMockStore from 'redux-mock-store'
 import {shallow} from 'enzyme'
-import TodosContainer from '../TodosContainer'
+import TodoListContainer from '../TodoListContainer'
 import {initialAppState} from "../../types";
 import {ActionTypes} from "../../actions";
 
-describe('TodosContainer Component > ', () => {
+describe('TodoListContainer Component > ', () => {
     let store :any
     let wrapper : any
 
@@ -14,7 +14,7 @@ describe('TodosContainer Component > ', () => {
         store = mockStore(initialAppState)
         store.clearActions()
         store.dispatch = jest.fn()
-        wrapper = shallow(<TodosContainer />, {context: {store}})
+        wrapper = shallow(<TodoListContainer />, {context: {store}})
     })
 
     afterEach(() => {
