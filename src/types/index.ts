@@ -15,3 +15,7 @@ export const initialState : State = {
 export interface AppState {
     todosData: State
 }
+
+export const initialAppState : AppState = {
+    todosData: { todos : []}
+}

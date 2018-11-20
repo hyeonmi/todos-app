@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
-import {toggleTodo} from '../actions'
 import TodoList from '../components/TodoList'
-import {AppState, State} from "../types";
+import * as actions from '../actions'
+import {AppState, State} from "../types"
 
 interface DispatchProps {
     toggleTodo: (id: number) => {}
@@ -12,7 +12,7 @@ const mapStateToProps = (state: AppState) : State => ({
 })
 
 const mapDispatchToProps = (dispatch: any) : DispatchProps => ({
-    toggleTodo: (id: number) => dispatch(toggleTodo(id))
+    toggleTodo: (id: number) => dispatch(actions.toggleTodo(id))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
+export default connect<State, DispatchProps>(mapStateToProps, mapDispatchToProps)(TodoList)

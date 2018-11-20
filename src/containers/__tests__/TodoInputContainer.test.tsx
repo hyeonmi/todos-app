@@ -13,7 +13,7 @@ describe('TodoInputContainer Component > ', () => {
         store = mockStore(initialState)
         store.clearActions()
         store.dispatch = jest.fn()
-        wrapper = shallow(<TodoInputContainer store={store}/>)
+        wrapper = shallow(<TodoInputContainer/>, {context:{store}})
     })
 
     afterEach(() => {
