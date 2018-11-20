@@ -1,5 +1,6 @@
 import * as React from 'react'
-import {Todo} from "../types";
+import {Todo} from '../types';
+import TodoItem from './TodoItem'
 
 interface OwnProps {
     todos: Todo[],
@@ -8,18 +9,9 @@ interface OwnProps {
 
 type Props = OwnProps
 
-interface State {
-
-}
-
-class TodoList extends React.Component<Props, State> {
-    handleToggleTodo (id: number) {
-        const {toggleTodo} = this.props
-        toggleTodo(id)
-    }
-
+class TodoList extends React.Component<Props> {
     render(){
-        const {todos} = this.props
+        const {todos, toggleTodo} = this.props
 
         if(!todos.length){
             return null
@@ -27,17 +19,7 @@ class TodoList extends React.Component<Props, State> {
 
         return(
             <ul>
-                {
-                    todos.map((todo: Todo) => {
-                        const {done, text, id} = todo
-                        return (
-                            <li key={id} onClick={this.handleToggleTodo.bind(this, id)}>
-                                <input type="checkbox" checked={done} readOnly={true}/>
-                                <span style={{textDecoration: done ? 'line-through':''}}>{text}</span>
-                            </li>
-                        )
-                    })
-                }
+                {todos.map((todo: Todo) => <TodoItem key={todo.id} {...{todo, toggleTodo}} />)}
             </ul>
         )
 
