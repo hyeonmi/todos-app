@@ -21,7 +21,7 @@ describe('TodoInputContainer Component > ', () => {
         wrapper
     })
 
-    test('addTodo 디스패쳐가 Props로 매핑 되어야 한다.', () => {
+    test('addTodo 디스패처가 Props로 매핑되어야 한다.', () => {
 
         // then
         expect(wrapper.props()).toEqual(expect.objectContaining({
@@ -29,7 +29,7 @@ describe('TodoInputContainer Component > ', () => {
         }))
     })
 
-    test('addTodo 디스패쳐가 호출 되면 ADD_TODO 타입의 액션과 todo가 전달되어야 한다', () => {
+    test('addTodo 디스패처가 호출 되면 ADD_TODO 타입의 액션과 todo가 전달되어야 한다.', () => {
 
         // when
         const text = 'blabla'

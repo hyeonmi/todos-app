@@ -18,7 +18,7 @@ describe('TodoList Component > ', () => {
         expect(wrapper.html()).toBeNull()
     })
 
-    test('할 일 목록이 한개 있으면 한개 출력되어야 한다', () => {
+    test('할 일 목록이 한 개 있으면 한 개 출력되어야 한다.', () => {
         // given
         const props = {
             todos: [{id: 1, text: "todo 1", done: false}],

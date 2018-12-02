@@ -22,7 +22,7 @@ describe('TodoListContainer Component > ', () => {
         wrapper
     })
 
-    test('todos와 toggleTodo 디스패쳐가 Props로 매핑 되어야 한다.', () => {
+    test('todos와 toggleTodo 디스패처가 Props로 매핑되어야 한다.', () => {
 
         // then
         expect(wrapper.props()).toEqual(expect.objectContaining({
@@ -31,7 +31,7 @@ describe('TodoListContainer Component > ', () => {
         }))
     })
 
-    test('toggleTodo 디스페처가 호출 되면 TOGGLE_TODO 타입의 액션과 todoId가 전달되어야 한다', () => {
+    test('toggleTodo 디스페처가 호출 되면 TOGGLE_TODO 타입의 액션과 todoId가 전달되어야 한다.', () => {
 
         // when
         const todoId = 1
