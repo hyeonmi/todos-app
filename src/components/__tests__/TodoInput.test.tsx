@@ -12,7 +12,7 @@ describe('TodoInput Component > ', () => {
         }
     }
 
-    test('입력한 할일이 없으면 할일이 추가 되지 않는다.', () => {
+    test('입력한 할 일이 없으면 할 일이 추가되지 않아야 한다.', () => {
         // given
         const {wrapper, props} = enzymeTodoRender()
         wrapper.setState({input: ''})
@@ -24,7 +24,7 @@ describe('TodoInput Component > ', () => {
         expect(props.addTodo).not.toHaveBeenCalled()
     })
 
-    test('입력한 할일이 공백이면 할일이 추가 되지 않는다.', () => {
+    test('입력한 할 일이 공백이면 할 일이 추가되지 않아야 한다.', () => {
         // given
         const {wrapper, props} = enzymeTodoRender()
         wrapper.setState({input: '  '})
@@ -36,7 +36,7 @@ describe('TodoInput Component > ', () => {
         expect(props.addTodo).not.toHaveBeenCalled()
     })
 
-    test('할일을 입력한 후 추가버튼을 클릭하면 할일이 추가되고 input이 빈값이 되어야 한다.', () => {
+    test('할 일을 입력한 후 [추가] 버튼을 클릭하면 할 일이 추가되고 입력 박스가 비어져야 한다.', () => {
         // given
         const {wrapper, props} = enzymeTodoRender()
         wrapper.setState({input: 'test'})
@@ -49,7 +49,7 @@ describe('TodoInput Component > ', () => {
         expect(wrapper.state("input")).toEqual('')
     })
 
-    test('할일을 입력한 후 엔터키를 누르면 할일이 추가되고 input이 빈값이 되어야 한다.', () => {
+    test('할 일을 입력한 후 Enter 키를 누르면 할 일이 추가되고 입력 박스가 비어져야 한다.', () => {
         // given
         const {wrapper, props} = enzymeTodoRender()
         wrapper.setState({input: 'test'})
@@ -62,7 +62,7 @@ describe('TodoInput Component > ', () => {
         expect(wrapper.state("input")).toEqual('')
     })
 
-    test('할일을 입력한 후 다른 키를 입력되면 입력 동작이 실행되지 않아야 한다.', () => {
+    test('할 일을 입력한 후 Enter 키 외의 다른 키를 누르면 할 일이 추가되지 않는다.', () => {
         // given
         const {wrapper, props} = enzymeTodoRender()
         wrapper.setState({input: 'test'})
@@ -75,7 +75,7 @@ describe('TodoInput Component > ', () => {
     })
 
 
-    test('input 값이 변경되면 state.input이 업데이트 되어야 한다.', () => {
+    test('입력 박스의 값이 변경되면 state.input 값이 업데이트되야 한다.', () => {
         // given
         const {wrapper} = enzymeTodoRender()
         const inputText = 'test'

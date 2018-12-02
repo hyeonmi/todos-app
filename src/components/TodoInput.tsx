@@ -1,12 +1,12 @@
 import * as React from 'react'
 
-interface OwnProps {
+type OwnProps = {
     addTodo: (text: string) => {}
 }
 
 type Props = OwnProps
 
-interface State {
+type State = {
     input: string
 }
 

@@ -4,7 +4,7 @@ import TodoList from '../TodoList'
 import TodoItem from '../TodoItem'
 
 describe('TodoList Component > ', () => {
-    test('할일 목록이 없으면 아무것도 렌더링 되지 않는다.', () => {
+    test('할 일 목록이 없으면 아무것도 출력되지 않는다.', () => {
         // given
         const props = {
             todos: [],
@@ -18,7 +18,7 @@ describe('TodoList Component > ', () => {
         expect(wrapper.html()).toBeNull()
     })
 
-    test('할일 목록이 있으면 렌더링 되어야 한다', () => {
+    test('할 일 목록이 한개 있으면 한개 출력되어야 한다', () => {
         // given
         const props = {
             todos: [{id: 1, text: "todo 1", done: false}],

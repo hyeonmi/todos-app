@@ -3,7 +3,7 @@ import {shallow} from 'enzyme'
 import TodoItem from '../TodoItem'
 
 describe('TodoItem Component > ', () => {
-    test('할일 내용이 렌더링 되어야 한다', () => {
+    test('할 일 내용이 출력되어야 한다.', () => {
         // given
         const props = {
             todo: {id: 1, text: "todo 1", done: false},
@@ -17,7 +17,7 @@ describe('TodoItem Component > ', () => {
         expect(wrapper.find("span").text()).toEqual(props.todo.text)
     })
 
-    test('미완료 된 할일은 취소선이 없어 한다.', () => {
+    test('미완료된 할 일은 취소 선이 없어 한다.', () => {
         // given
         const props = {
             todo: {id: 1, text: "todo 1", done: false},
@@ -31,7 +31,7 @@ describe('TodoItem Component > ', () => {
         expect(wrapper.find("span").prop('style')).toEqual({textDecoration:""})
     })
 
-    test('완료된 할일은 취소선이 있어야 한다.', () => {
+    test('완료된 할 일은 취소 선이 있어야 한다.', () => {
         // given
         const props = {
             todo: {id: 1, text: "todo 1", done: true},
@@ -45,7 +45,7 @@ describe('TodoItem Component > ', () => {
         expect(wrapper.find("span").prop('style')).toEqual({textDecoration:"line-through"})
     })
 
-    test('할일 목록을 클릭하면 toggleTodo 함수가 호출 되어야 한다.', () => {
+    test('할 일을 클릭하면 toggleTodo 함수가 호출되어야 한다.', () => {
         // given
         const props = {
             todo: {id: 1, text: "todo 1", done: false},

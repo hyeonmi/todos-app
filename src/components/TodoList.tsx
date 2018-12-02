@@ -2,7 +2,7 @@ import * as React from 'react'
 import {Todo} from '../types';
 import TodoItem from './TodoItem'
 
-interface OwnProps {
+type OwnProps = {
     todos: Todo[],
     toggleTodo: (todoId: number) => void
 }

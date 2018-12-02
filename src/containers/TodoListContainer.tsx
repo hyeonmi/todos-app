@@ -3,7 +3,7 @@ import TodoList from '../components/TodoList'
 import * as actions from '../actions'
 import {AppState, State} from "../types"
 
-interface DispatchProps {
+type DispatchProps = {
     toggleTodo: (id: number) => {}
 }
 

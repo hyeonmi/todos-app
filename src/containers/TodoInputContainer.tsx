@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import TodoInput from '../components/TodoInput'
 import * as actions from "../actions";
 
-interface DispatchProps {
+type DispatchProps = {
     addTodo: (text: string) => {}
 }
 
