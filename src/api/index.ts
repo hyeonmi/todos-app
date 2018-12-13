@@ -9,6 +9,6 @@ export type Avatar = {
 }
 
 export const fetchGetAvatar = async(): Promise<Avatar> => {
-    const result = await axios.get<Avatar>('https://www.avatarapi.com/ajax/instant.aspx?email=pilotfish22@gmail.com')
+    const result = await axios.get<Avatar>('https://www.avatarapi.com/ajax/instant.aspx?email=test@naver.com')
     return result && result.data
 }
